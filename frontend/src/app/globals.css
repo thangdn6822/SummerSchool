@@ -1,0 +1,197 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap'); */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import 'flowbite';
+
+
+
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+ 
+}
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #999; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+
+
+.nav-links {
+  @apply text-black no-underline font-medium p-1 lg:p-2 h-full text-[14px] lg:text-[16px] hover:text-[#2c31cf] text-nowrap;
+}
+
+li .active {
+  @apply text-[#2c31cf] no-underline font-semibold p-1 lg:p-2 h-full text-[14px] lg:text-[16px] relative after:absolute after:bottom-0 after:left-[8px] after:bg-[#2c31cf] after:h-[2px] after:w-[45px] text-nowrap;
+}
+
+.form-input input:focus ~ label {
+  top: 20%;
+  font-size: 16px;
+  left: 60px;
+}
+
+.popular-card {
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: 0.5s;
+}
+
+.popular-card:hover {
+  box-shadow: none;
+}
+
+.popular-card-header {
+  @apply flex items-center justify-between gap-4 mb-2
+}
+
+
+.box {
+  @apply h-[252px] w-auto;
+}
+
+.box-link-title {
+  @apply font-[700] mb-[20px] text-[20px] hover:text-gray-800 relative after:absolute after:bottom-[-10px] after:left-0 after:bg-[#2c31cf] after:h-0.5 after:w-[120px];
+}
+
+.link-tab {
+  @apply mb-[16px] inline-block text-black text-[14px] hover:text-[#2c31cf] hover:translate-x-[2px] hover:transition-all  hover:ease-in-out hover:duration-300;
+}
+
+
+
+.info-detail {
+  @apply flex gap-2;
+}
+
+.icon {
+  @apply text-[18px]
+}
+
+
+
+.about-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.wrapper-about-us-text {
+  display: grid;
+  grid-template-columns: 1fr 100px;
+}
+
+.wrapper-about-us-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.signin-background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: .1;
+  background-image: radial-gradient(#ffffff40, #fff0 40%), radial-gradient(hsl(44, 100%, 66%) 30%, hsl(338, 68%, 65%), hsla(338, 68%, 65%, .4) 41%, transparent 52%), radial-gradient(hsl(272, 100%, 60%) 37%, transparent 46%), linear-gradient(155deg, transparent 65%, hsl(142, 70%, 49%) 95%), linear-gradient(45deg, #0065e0, #0f8bff);
+  background-size: 200% 200%, 285% 500%, 285% 500%, cover, cover;
+  background-position: bottom left, 109% 68%, 109% 68%, center, center;
+}
+
+.profile-container input[type="file"]::-webkit-file-upload-button {
+  cursor: pointer;
+}
+
+.round {
+  transform: translate(50%, -50%);
+}
+
+.profile-userinfo-item {
+  font-size: 14px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 10px 0 10px 0;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+/* .personinfo-container-form {
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 100px;
+} */
+
+.input-container {
+  margin-bottom: 8px;
+}
+
+
+.custom-input:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.wrapper-people-says-content {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 30px;
+}
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+}
+
+
+@keyframes warningTransform {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-8px); }
+  50% { transform: translateX(8px); }
+  75% { transform: translateX(-8px); }
+  100% { transform: translateX(0); }
+}
+
+.warning-icon {
+  animation: warningTransform 0.5s ease-in-out;
+}
+
+
+@media only screen and (max-width: 1024px) {
+  .wrapper-people-says-content {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .popular-list-card {
+    grid-template-columns: repeat(2, 1fr)!important;
+  }
+}
